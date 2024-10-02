@@ -1,0 +1,123 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg-image {
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/591/911/628/hollow-knight-dark-hd-wallpaper-preview.jpg'); /* Use the provided image URL */
+    
+    filter: blur(24px);
+    
+    height: 100%;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family:'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 75px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 1.8em; 
+}
+
+h2 {
+    font-size: 1.3em;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+p1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1em;
+}
+
+section {
+    background-color: #121212a1;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.contact {
+    font-size: 1.1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: left;
+}
+
+
+@media (max-width: 768px) {
+
+
+    body {
+        padding: 12px;
+    }
+    
+    p1{font-size: 1.1em;
+        text-align: left;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 1.8em;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 1.3em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    .contact {
+        font-size: 1.4em;
+        font-family: monospace;
+        text-align: center;
+    }
+    
+
+    section {
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 15px;
+        max-width: calc(100% - 40px);
+    }
+}
