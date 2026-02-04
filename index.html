@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio-Abhinavkr</title>
+    <link rel="icon" href="data:,">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d0d;
+            color: #e5e5e5;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            background-image: url("bg.gif");
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 0;
+        }
+
+        .container {
+            padding: 90px;
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        a { color: #4ea1ff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .prompt { color: #6aff6a; }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            animation: blink 1s steps(2,start) infinite;
+        }
+
+        @keyframes blink { to { visibility: hidden; } }
+
+        .dots::after {
+            content: "";
+            animation: dots 1.5s steps(4,end) infinite;
+        }
+
+        .typing {
+            white-space: pre-wrap;
+        }
+
+
+        @keyframes dots {
+            0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}100%{content:""}
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-position: center top;
+                background-size: 220px auto;
+                font-weight: 500;
+            }
+            .container { padding: 24px; max-width: 100%; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span class="prompt">$</span> whoami<span class="cursor">▮</span><br><br>
+        <h1>Abhinav Kumar Rai</h1>
+        <p id="typewriter" class="typing"></p>
+
+        <div class="contact">
+            <span class="prompt">$</span> contact<span class="dots"></span><br><br>
+            <p>GitHub: <a href="https://github.com/abhinav4961">github.com/abhinav4961</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/abhinavkr22">linkedin.com/in/abhinavkr22</a></p>
+            <p>Email: <a href="mailto:kumarabhinav.akr@gmail.com">kumarabhinav.akr@gmail.com</a></p>
+        </div>
+    </div>
+
+    <script>
+        const text = `Interested in programming, cybersecurity, systems, and AI.
+I enjoy building things and understanding how they work under the hood.
+Open to connecting and collaborating.
+
+## bg by original creator @Pixilartshattered
+`;
+        let i = 0, el = document.getElementById("typewriter");
+        (function type(){ if(i<text.length){ el.textContent+=text[i++]; setTimeout(type,15); } })();
+    </script>
+</body>
+</html>
