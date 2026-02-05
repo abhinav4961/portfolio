@@ -44,14 +44,14 @@
         .cursor {
             display: inline-block;
             width: 10px;
-            animation: blink 1s steps(2,start) infinite;
+            animation: blink 0.8s steps(2,start) infinite;
         }
 
         @keyframes blink { to { visibility: hidden; } }
 
         .dots::after {
             content: "";
-            animation: dots 1.5s steps(4,end) infinite;
+            animation: dots 1.2s steps(4,end) infinite;
         }
 
         .typing {
@@ -96,7 +96,8 @@ Open to connecting and collaborating.
 ## bg by original creator @Pixilartshattered
 `;
         let i = 0, el = document.getElementById("typewriter");
-        (function type(){ if(i<text.length){ el.textContent+=text[i++]; setTimeout(type,15); } })();
+        (function type(){ if(i<text.length){ el.textContent+=text[i++]; setTimeout(type,5); } })();
     </script>
 </body>
 </html>
+
