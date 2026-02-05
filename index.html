@@ -21,7 +21,7 @@
             content: "";
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.85);
             z-index: 0;
         }
 
@@ -58,15 +58,22 @@
             white-space: pre-wrap;
         }
 
+        h1 {
+            font-size: 1.8rem;}
 
         @keyframes dots {
             0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}100%{content:""}
         }
 
         @media (max-width: 768px) {
+            
+            h1 {
+                font-size: 1.3rem; 
+            }
+
             body {
                 background-position: center top;
-                background-size: 220px auto;
+                background-size: 2200px auto;
                 font-weight: 500;
             }
             .container { padding: 24px; max-width: 100%; }
@@ -100,4 +107,3 @@ Open to connecting and collaborating.
     </script>
 </body>
 </html>
-
