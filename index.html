@@ -1,112 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Portfolio-Abhinavkr</title>
-    <link rel="icon" href="data:,">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>abhinav — portfolio</title>
+  <style>
+    /* Base */
+    body {
+      background: #0d0f0e;
+      color: #c8c8c0;
+      font-family: monospace;
+      font-size: 17px;
+      max-width: 1300px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #0d0d0d;
-            color: #e5e5e5;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-            background-image: url("bg.gif");
-            background-repeat: no-repeat;
-            position: relative;
-        }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 0;
+    }
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 0;
-        }
+    a { color: #6fc4c4; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-        .container {
-            padding: 90px;
-            max-width: 700px;
-            position: relative;
-            z-index: 1;
-        }
+    /* Colors */
+    .g { color: #7ec88a; } /* green  — name, project titles */
+    .c { color: #6fc4c4; } /* cyan   — section headers      */
+    .p { color: #a08ac8; } /* purple — stacks               */
+    .y { color: #d4b96a; } /* yellow — contact labels       */
+    .d { color: #888;    } /* dim    — subtitles, meta info */
 
-        .contact {
-            border-top: 1px solid #333;
-            padding-top: 20px;
-        }
+    /* Name size */
+    .name { font-size: 22px; }
 
-        a { color: #4ea1ff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .prompt { color: #6aff6a; }
+    /* Underlined skill labels */
+    .u { text-decoration: underline; }
 
-        .cursor {
-            display: inline-block;
-            width: 10px;
-            animation: blink 0.8s steps(2,start) infinite;
-        }
-
-        @keyframes blink { to { visibility: hidden; } }
-
-        .dots::after {
-            content: "";
-            animation: dots 1.2s steps(4,end) infinite;
-        }
-
-        .typing {
-            white-space: pre-wrap;
-        }
-
-        h1 {
-            font-size: 1.8rem;}
-
-        @keyframes dots {
-            0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}100%{content:""}
-        }
-
-        @media (max-width: 768px) {
-            
-            h1 {
-                font-size: 1.4rem; 
-            }
-             .typing {
-                line-height: 1.6;
-                font-size: 0.95rem;}
-
-            body {
-                background-position: center top;
-                background-size: 2200px auto;
-                font-weight: 500;
-            }
-            .container { padding: 24px; max-width: 90%; }
-        }
-    </style>
+    /* Mobile */
+    @media (max-width: 600px) {
+      body { font-size: 14px; margin: 16px auto; }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <span class="prompt">$</span> whoami<span class="cursor">▮</span><br><br>
-        <h1>Abhinav Kumar Rai</h1>
-        <p id="typewriter" class="typing"></p>
+<pre>
+<span class="g name">Abhinav Kumar Rai</span>
+<span class="d">programmer · security · computer science</span>
+─────────────────────────────────────
+Interested in programming, cybersecurity, systems, and AI.
 
-        <div class="contact">
-            <span class="prompt">$</span> contact<span class="dots"></span><br><br>
-            <p>GitHub: <a href="https://github.com/abhinav4961">github.com/abhinav4961</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/abhinavkr22">linkedin.com/in/abhinavkr22</a></p>
-            <p>Email: <a href="mailto:kumarabhinav.akr@gmail.com">kumarabhinav.akr@gmail.com</a></p>
-        </div>
-    </div>
+<span class="c"># CONTACT</span>
 
-    <script>
-        const text = `Interested in programming, cybersecurity, systems, and AI.
-I enjoy building things and understanding how they work under the hood.
-Open to connecting and collaborating.
+<span class="y">GitHub:</span>    <a href="https://github.com/abhinav4961">github.com/abhinav4961</a>
+<span class="y">LinkedIn:</span>  <a href="https://www.linkedin.com/in/abhinavkr22">https://www.linkedin.com/in/abhinavkr22/</a>
+<span class="y">Email:</span>     <a href="mailto:kumarabhinav.akr@gmail.com">Gmail</a>
 
-## bg by original creator @Pixilartshattered
-`;
-        let i = 0, el = document.getElementById("typewriter");
-        (function type(){ if(i<text.length){ el.textContent+=text[i++]; setTimeout(type,5); } })();
-    </script>
+<span class="c"># SKILLS</span>
+
+<span class="u">Languages:</span>  Python, C, HTML, CSS
+<span class="u">Tools:</span>      Linux, Git, GitHub, SQL
+<span class="u">Security:</span>   Nmap, Burp Suite, Metasploit, Wireshark, DVWA, Packet Analysis
+<span class="u">Concepts:</span>   Network Security, Web Security, HTTP, Database, Privacy-Preserving ML
+
+<span class="c"># PROJECTS</span>
+
+<span class="g">personal-security-homelab</span>
+  Multi-VM cybersecurity lab with isolated internal networks to simulate real-world systems.
+  Performed reconnaissance, exploitation, and packet analysis to understand attack surfaces.
+  <span class="p">VirtualBox · Kali Linux · Metasploitable 2 · DVWA · Nmap · Metasploit · Wireshark</span>
+
+<span class="g">web-security-header-checker</span>
+  Python utility to send HTTP requests, analyze server responses, and identify missing or
+  misconfigured security headers such as CSP, HSTS, and X-Frame-Options.
+  <span class="p">Python · Requests · HTTP Security Headers</span>
+
+
+<span class="d">open to work · available for collaboration</span>
+</pre>
 </body>
 </html>
