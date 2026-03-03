@@ -1,83 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>abhinav — portfolio</title>
-  <style>
-    /* Base */
-    body {
-      background: #0d0f0e;
-      color: #c8c8c0;
-      font-family: monospace;
-      font-size: 17px;
-      max-width: 1300px;
-      margin: 24px auto;
-      padding: 0 16px;
-    }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Abhinav Kumar Rai</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    pre {
-      white-space: pre-wrap;
-      word-break: break-word;
-      margin: 0;
-    }
+  body {
+    font-family: sans-serif;
+    background: #fff;
+    color: #111;
+    display: flex;
+    justify-content: center;
+    padding: 56px 24px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
 
-    a { color: #6fc4c4; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+  main { width: 100%; max-width: 780px; }
 
-    /* Colors */
-    .g { color: #7ec88a; } /* green  — name, project titles */
-    .c { color: #6fc4c4; } /* cyan   — section headers      */
-    .p { color: #a08ac8; } /* purple — stacks               */
-    .y { color: #d4b96a; } /* yellow — contact labels       */
-    .d { color: #888;    } /* dim    — subtitles, meta info */
+  /* ── Header ── */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #111;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
-    /* Name size */
-    .name { font-size: 22px; }
+  h1 { font-size: 1.7rem; font-weight: 600; }
 
-    /* Underlined skill labels */
-    .u { text-decoration: underline; }
+  .tagline {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #555;
+    letter-spacing: 0.1em;
+    text-align: right;
+  }
 
-    /* Mobile */
-    @media (max-width: 600px) {
-      body { font-size: 14px; margin: 16px auto; }
-    }
-  </style>
+  /* ── Two-column layout ── */
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+  }
+
+  .full-width { grid-column: 1 / -1; }
+
+  /* ── Section ── */
+  section { margin-bottom: 28px; }
+
+  .section-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 10px;
+  }
+
+  /* ── Tables ── */
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+
+  td { padding: 6px 0; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
+
+  tr:last-child td { border-bottom: none; }
+
+  td.key {
+    width: 100px;
+    font-weight: 500;
+    color: #444;
+    white-space: nowrap;
+    padding-right: 16px;
+  }
+
+  td.val { color: #111; }
+
+  td.val a {
+    color: #111;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    transition: border-color 0.15s;
+  }
+  td.val a:hover { border-color: #111; }
+
+  /* ── Projects ── */
+  .project { padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+  .project:last-child { border-bottom: none; }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+
+  .project-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    font-family: monospace;
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 2px 8px;
+    border: 1px solid #ddd;
+    color: #555;
+    border-radius: 2px;
+  }
+
+  /* ── Bio ── */
+  .bio { font-size: 0.92rem; color: #555; }
+
+  /* ── Footer ── */
+  footer {
+    margin-top: 8px;
+    padding-top: 14px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .status {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #111;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.15; }
+  }
+
+  @media (max-width: 560px) {
+    .layout { grid-template-columns: 1fr; }
+    header { align-items: flex-start; }
+    .tagline { text-align: left; }
+  }
+</style>
 </head>
 <body>
-<pre>
-<span class="g name">Abhinav Kumar Rai</span>
-<span class="d">programmer · security · computer science</span>
-─────────────────────────────────────
-Interested in programming, cybersecurity, systems, and AI.
+<main>
 
-<span class="c"># CONTACT</span>
+  <header>
+    <h1>Abhinav Kumar Rai</h1>
+    <div class="tagline">Programmer &nbsp;·&nbsp; Security &nbsp;·&nbsp; Computer Science</div>
+  </header>
 
-<span class="y">GitHub:</span>     <a href="https://github.com/abhinav4961">github.com/abhinav4961</a>
-<span class="y">LinkedIn:</span>   <a href="https://www.linkedin.com/in/abhinavkr22">inkedin.com/in/abhinavkr22/</a>
-<span class="y">Email:</span>      <a href="mailto:kumarabhinav.akr@gmail.com">Gmail</a>
+  <div class="layout">
 
-<span class="c"># SKILLS</span>
+    <!-- LEFT COLUMN -->
+    <div>
 
-<span class="u">Languages:</span>  Python, C, HTML, CSS
-<span class="u">Tools:</span>      Linux, Git, GitHub, SQL
-<span class="u">Security:</span>   Nmap, Burp Suite, Metasploit, Wireshark, DVWA, Packet Analysis
-<span class="u">Concepts:</span>   Network Security, Web Security, HTTP, Database, Privacy-Preserving ML
+      <section>
+        <div class="section-label">About</div>
+        <p class="bio">Interested in programming, cybersecurity, systems, and artificial intelligence.</p>
+      </section>
 
-<span class="c"># PROJECTS</span>
+      <section>
+        <div class="section-label">Contact</div>
+        <table>
+          <tr>
+            <td class="key">Email</td>
+            <td class="val"><a href="mailto:kumarabhinav.akr@gmail.com">kumarabhinav.akr@gmail.com</a></td>
+          </tr>
+          <tr>
+            <td class="key">GitHub</td>
+            <td class="val"><a href="https://github.com/abhinav4961" target="_blank">github.com/abhinav4961</a></td>
+          </tr>
+          <tr>
+            <td class="key">LinkedIn</td>
+            <td class="val"><a href="https://linkedin.com/in/abhinavkr22" target="_blank">linkedin.com/in/abhinavkr22</a></td>
+          </tr>
 
-<span class="g">personal-security-homelab</span>
-  Multi-VM cybersecurity lab with isolated internal networks to simulate real-world systems.
-  Performed reconnaissance, exploitation, and packet analysis to understand attack surfaces.
-  <span class="p">VirtualBox · Kali Linux · Metasploitable 2 · DVWA · Nmap · Metasploit · Wireshark</span>
+        </table>
+      </section>
 
-<span class="g">web-security-header-checker</span>
-  Python utility to send HTTP requests, analyze server responses, and identify missing or
-  misconfigured security headers such as CSP, HSTS, and X-Frame-Options.
-  <span class="p">Python · Requests · HTTP Security Headers</span>
+    </div>
 
+    <!-- RIGHT COLUMN -->
+    <div>
 
-<span class="d">open to work · available for collaboration</span>
-</pre>
+      <section>
+        <div class="section-label">Skills</div>
+        <table>
+          <tr>
+            <td class="key">Languages</td>
+            <td class="val">Python, C, HTML, CSS</td>
+          </tr>
+          <tr>
+            <td class="key">Tools</td>
+            <td class="val">Linux, Git, GitHub, SQL</td>
+          </tr>
+          <tr>
+            <td class="key">Security</td>
+            <td class="val">Nmap, Burp Suite, Metasploit, Wireshark, DVWA, Packet Analysis</td>
+          </tr>
+          <tr>
+            <td class="key">Concepts</td>
+            <td class="val">Network Security, Web Security, HTTP, Database, Privacy-Preserving ML</td>
+          </tr>
+        </table>
+      </section>
+
+    </div>
+
+    <!-- PROJECTS FULL WIDTH -->
+    <div class="full-width">
+      <section>
+        <div class="section-label">Projects</div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">personal-security-homelab</span>
+          </div>
+          <p class="project-desc">Multi-VM cybersecurity lab with isolated internal networks to simulate real-world systems. Performed reconnaissance, exploitation, and packet analysis to understand attack surfaces.</p>
+          <div class="project-stack">
+            <span class="tag">VirtualBox</span>
+            <span class="tag">Kali Linux</span>
+            <span class="tag">Metasploitable 2</span>
+            <span class="tag">DVWA</span>
+            <span class="tag">Nmap</span>
+            <span class="tag">Metasploit</span>
+            <span class="tag">Wireshark</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-name">web-security-header-checker</span>
+          </div>
+          <p class="project-desc">Python utility to send HTTP requests, analyze server responses, and identify missing or misconfigured security headers such as CSP, HSTS, and X-Frame-Options.</p>
+          <div class="project-stack">
+            <span class="tag">Python</span>
+            <span class="tag">Requests</span>
+            <span class="tag">HTTP Security Headers</span>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="status"><span class="dot"></span>Open to work</span>
+    <span class="status">Available for collaboration</span>
+  </footer>
+
+</main>
 </body>
 </html>
